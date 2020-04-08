@@ -1,0 +1,113 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background:linear-gradient(#f1f1f1,#e1e1e1);
+    background-repeat:no-repeat;
+}
+
+*{
+    margin: 0;
+}
+
+footer{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    height:60px;
+    background:#333;
+    -webkit-box-shadow:0px 3px 18px rgba(0,0,0,.6);
+    visibility:hidden;
+}
+
+footer p{
+    text-align:center;
+    color:lavender;
+    line-height:60px;
+}
+
+#HeaderNav{
+    width:100%;
+    height:100px;
+    /*background:#808080;*/
+    position: relative;
+    border-top:5px solid #d51f1f;
+    box-shadow:0px 3px 8px rgba(0,0,0,.06)
+}
+
+
+#HeaderNav ul li{
+    float:left;
+    list-style:none;
+    /*background:#38c;*/
+    width:15%;
+    position: absolute;
+    top:40px;
+    padding-bottom: 30px;
+    cursor: pointer;
+    transition:.06s;
+}
+
+
+
+#HeaderNav ul li a{
+    text-decoration:none;
+    font-family:monospace;
+    font-size:1.4em;
+    color:#333;
+}
+
+#HeaderNav ul li:hover{
+    border-bottom: 3px solid red;
+}
+#HeaderNav ul li a:hover{
+    color:red;
+}
+
+#HeaderNav ul li a.active{
+    color:green;
+}
+
+#band img{
+    width:12%;
+    height:12%;
+    margin-left:2%;
+    margin-top:0%;
+    border-radius:50%;
+}
+
+#band div{
+    color:red;
+    font-family:'Agency FB';
+    font-size:1.6em;
+    margin-left: 2%;
+    text-shadow:1px 1px 3px;
+}
+
+#band div span{
+    color:#333;
+    font-size:1.2em;
+}
+
+#downloads{
+    margin:0;
+    padding: 0;
+    width:100%;
+}
+
+#downloads li{
+    text-align: center;
+    list-style-type: none;
+    padding-bottom: 20px;
+    padding-top:20px;
+    margin-bottom: 20px;
+}
+
+#downloads li a{
+    text-decoration: none;
+    font-size: 1em;
+    color:indianred;
+    transition: .6s;
+}
+
+#downloads li a:hover{
+    color: lime;
+}

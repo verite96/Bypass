@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ title }}</title>
+	<link rel="stylesheet" type="text/css" href="/assets/css/swag.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/glyphicon.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
+	<script type="text/javascript" src="/assets/js/jquery.js"></script>
+	<script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/assets/js/p5.js"></script>
+</head>
+<body>
+
+	<nav id="HeaderNav" class="animated">
+		<div id="band" class="animated rollIn zoomIn">
+			<div><span>By</span>Pass</div>
+		</div>
+		<center>
+			<ul class="animated">
+				<li href="/" class="animated slideInRight"><a>Home</a></li>
+				<li href="/about" class="animated slideInUp"><a>About</a></li>
+				<li href="/contact" class="animated slideInLeft"><a>Contact</a></li>
+			</ul>
+		</center>
+	</nav>
+
+<script type="text/javascript">
+	
+	let m = -($('#HeaderNav center ul li').width() + 20);
+	let count = 0;
+	$('#HeaderNav center ul li').each(function(){
+		if (count == 1){
+			let x = $(this).width();
+			let winX = $(window).width();
+			let deltaX = ((winX - x)/2);
+			$(this).css('left', deltaX);	
+		}else{
+			let x = $(this).width();
+			let winX = $(window).width();
+			let deltaX = ((winX - x)/2);
+			$(this).css('left', deltaX+m);
+			m = m * -1;
+		}
+		count++;
+	});
+
+	$(window).resize(function(){
+		let m = -($('#HeaderNav center ul li').width() + 20);
+		let count = 0;
+		$('#HeaderNav center ul li').each(function(){
+			if (count == 1){
+				let x = $(this).width();
+				let winX = $(window).width();
+				let deltaX = ((winX - x)/2);
+				$(this).css('left', deltaX);	
+			}else{
+				let x = $(this).width();
+				let winX = $(window).width();
+				let deltaX = ((winX - x)/2);
+				$(this).css('left', deltaX+m);
+				m = m * -1;
+			}
+			count++;
+		});
+	});
+
+	$(window).resize(function(){
+		let winx = $(window).width();
+		let x = $('#band').width();
+	});
+
+	$(window).scroll(function(){
+		if (!$('footer').hasClass('slideInUp')){
+			$('footer').addClass('slideInUp');
+			$('footer').css('visibility','initial');
+		}
+		let st = $(window).scrollTop();
+		if (st > 60){
+			$('#HeaderNav').addClass('slideOutUp');
+			$('#HeaderNav').removeClass('slideInDown');
+		}else{
+			$('#HeaderNav').removeClass('slideOutUp');
+			$('#HeaderNav').addClass('slideInDown');
+		}
+		
+	});
+
+	$('#HeaderNav center ul li').click(function(){
+		let href = $(this).attr('href');
+		window.location.href = href;
+	});
+
+
+</script>
